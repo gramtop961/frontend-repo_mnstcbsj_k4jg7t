@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero3D from './components/Hero3D';
+import Gallery from './components/Gallery';
+import BottomNav from './components/BottomNav';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen w-full bg-neutral-950 text-neutral-100 antialiased">
+      <Hero3D />
+
+      <main className="pb-24">
+        <Gallery />
+
+        <section className="mx-auto w-[92%] sm:w-[420px] mt-8">
+          <div className="rounded-2xl border border-white/10 bg-neutral-900/60 p-5 backdrop-blur">
+            <h3 className="text-white text-lg font-medium mb-2">About</h3>
+            <p className="text-neutral-300 text-sm leading-relaxed">
+              Gokula Krishnan is a model with a passion for technology-forward storytelling. This mobile-first portfolio delivers a premium, gesture-driven experience with swipe navigation, pinch-to-zoom, and smooth performance across devices.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <BottomNav />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
